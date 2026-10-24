@@ -1,0 +1,7 @@
+Category,Resource,URL,Availability,Research use,Notes
+Dataset,Tooth removal force and torque signals,https://doi.org/10.4121/16847026.v1,Public research dataset,Force control and extraction modeling,Review original license
+Dataset,Tooth removal motion recordings,https://doi.org/10.4121/20485383,Public research dataset,Movement modeling and motion planning,Review original license
+Code,Automated Dental Crown Preparation MATLAB,https://github.com/Aadiv1999/rbe_501,Public educational repository,6 DOF manipulator and planning,Not clinically validated
+Simulation,NVIDIA Isaac Sim,https://github.com/isaac-sim,Public software ecosystem,Robotic physics and digital twin simulation,Not a dental cutting simulator
+Framework,ROS 2,https://github.com/ros2,Open source framework,Robot control and integration,General robotics
+Framework,MoveIt,https://github.com/moveit/moveit2,Open source framework,Motion planning and manipulation,General robotics
