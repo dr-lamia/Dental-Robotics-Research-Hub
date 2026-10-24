@@ -1,0 +1,25 @@
+name: Weekly dental robotics discovery
+on:
+  schedule:
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  discovery:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate catalogs
+        run: python scripts/validate_catalog.py
+      - name: Find candidates
+        run: python scripts/discover_crossref.py
+      - name: Open review issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create --title "Weekly dental robotics literature candidates $(date -u +%Y-%m-%d)" --body-file discovery.md
