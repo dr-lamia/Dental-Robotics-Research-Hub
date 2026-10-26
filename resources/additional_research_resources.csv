@@ -1,0 +1,7 @@
+Resource,Category,Dental_specific,URL,Availability,Relevance,Limitation
+MT3D missing tooth detection dataset,3D dataset,Yes,https://joonsu0109gh.github.io/MT3D/,Project page available,3D spatial perception for implant planning,Verify actual file downloads and license
+Multi-view preclinical crown preparation images,Image dataset,Yes,https://doi.org/10.17632/27kp5jg4c3.3,Public Mendeley Data release,Visual evaluation of crown preparations,No robot trajectories or 3D cutting ground truth
+Niryo dental surgeon assistant,Code,Yes,https://github.com/Baher-Kherbek/Niryo-Arm-as-a-dental-surgeon-assistant,Public GitHub project,ROS2 and YOLO tool handling,Not a validated dental surgery robot
+MiDAS multimodal robotic surgery,Dataset and code,No,https://uva-dsa.github.io/MiDAS/,Public project resources,Time synchronized multimodal robot learning,Non dental surgical domain
+SurgPose surgical tool tracking,Dataset,No,https://zenodo.org/records/15278516,Public Zenodo release,Tool pose estimation,Non dental surgical domain
+SurgRAW and SurgCOTBench,Code and benchmark,No,https://github.com/jinlab-imvr/SurgRAW,Public code and benchmark,Multimodal robotic surgical reasoning,Non dental surgical domain
