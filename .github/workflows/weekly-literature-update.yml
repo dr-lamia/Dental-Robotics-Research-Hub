@@ -1,0 +1,34 @@
+name: Weekly dental robotics literature discovery
+on:
+  schedule:
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+permissions:
+  issues: write
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Search Crossref for recent dental robotics papers
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python - <<'PY'
+          import json, os, urllib.parse, urllib.request, datetime, subprocess
+          today=datetime.date.today()
+          start=today-datetime.timedelta(days=14)
+          query=urllib.parse.urlencode({"query.bibliographic":"dental robotic surgery tooth preparation implant robotics","filter":f"from-pub-date:{start.isoformat()}","rows":20,"select":"DOI,title,published,URL"})
+          request=urllib.request.Request("https://api.crossref.org/works?"+query,headers={"User-Agent":"DentalRoboticsResearchHub/1.0 (research literature discovery)"})
+          with urllib.request.urlopen(request,timeout=30) as response:
+              items=json.load(response)["message"]["items"]
+          terms=("dental","dentistry","tooth","teeth","implant","endodont","orthodont","oral","maxillofacial","crown")
+          lines=[]
+          for item in items:
+              title=(item.get("title") or [""])[0]
+              if not any(t in title.lower() for t in terms): continue
+              lines.append(f"- {title} — DOI: https://doi.org/{item.get('DOI','')}")
+          if lines:
+              body="Candidate papers discovered via Crossref; verify relevance and metadata before adding to catalog.\n\n"+"\n".join(lines)
+              subprocess.run(["gh","issue","create","--repo",os.environ["GH_REPO"],"--title",f"Weekly dental robotics literature candidates — {today.isoformat()}","--body",body],check=True)
+          PY
