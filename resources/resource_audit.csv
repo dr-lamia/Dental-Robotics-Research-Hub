@@ -1,0 +1,7 @@
+resource,kind,primary_url,dental_specific,license_status,download_verified,clinical_validation,priority,next_action
+Tooth removal force and torque signals,dataset,https://doi.org/10.4121/16847026.v1,Yes,Review original license,Not independently rechecked,Research experiment,High,Check downloadable files and reuse terms
+Tooth removal motion recordings,dataset,https://doi.org/10.4121/20485383,Yes,Review original license,Not independently rechecked,Cadaver experimental data,High,Check file formats and subjects
+Automated Dental Crown Preparation MATLAB,code,https://github.com/Aadiv1999/rbe_501,Yes,Inspect repository license,Not independently rechecked,Educational simulation only,High,Audit scripts and dependencies
+NVIDIA Isaac Sim,simulation,https://github.com/isaac-sim,No,Review individual component licenses,Not applicable,General robotics platform,Medium,Identify supported robot and ROS integrations
+ROS 2,framework,https://github.com/ros2,No,Review individual component licenses,Not applicable,General robotics framework,Medium,Choose distribution and compatible packages
+MoveIt 2,framework,https://github.com/moveit/moveit2,No,Review repository license,Not independently rechecked,General motion planning,Medium,Assess robot arm integration
